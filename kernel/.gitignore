@@ -5,3 +5,5 @@
 /src/limine.h
 /bin
 /obj
+/src/flanterm
+/src/lib/nanoprintf*

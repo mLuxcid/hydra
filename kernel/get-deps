@@ -74,7 +74,18 @@ clone_repo_commit \
     src/cc-runtime \
     b4d3b970b2f6e7d08360c66eea8314e8dd901490
 
+clone_repo_commit \
+    https://codeberg.org/mintsuki/flanterm.git \
+    src/flanterm \
+    bdecdcb1b7dad05ab5249e2c3e4d2c27a661e864
+
 download_by_hash \
     https://github.com/limine-bootloader/limine/raw/4687a182be23939c2d9f15db970382dc353ed956/limine.h \
     src/limine.h \
     6879e626f34c1be25ac2f72bf43b083fc2b53887280bb0fcdaee790e258c6974
+
+download_by_hash \
+    https://github.com/charlesnicholson/nanoprintf/raw/5017d7bd0dc7210ea0c5f2fd8332eca9f222790d/nanoprintf.h \
+    src/lib/nanoprintf_orig.h \
+    77c52b1d79169c2bfb087d6bdfb4ae1604be003e85f9714fe31f6b8f88734d1c
+sed '/NPF_WRITEBACK(LONG_DOUBLE/d' src/lib/nanoprintf_orig.h >src/lib/nanoprintf.h
